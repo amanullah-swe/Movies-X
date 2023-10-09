@@ -1,8 +1,8 @@
 import React from 'react'
 
-function Button({ label, fullwidth }) {
+function Button({ label, fullwidth, handleClick }) {
     return (
-        <button className={`h-full ${fullwidth ? 'w-full' : 'w-[100px]'} bg-orange-500 border rounded-e-full`} >{label}</button>
+        <button onClick={handleClick} className={`h-full ${fullwidth ? 'w-full' : 'w-[100px]'} bg-orange-500 border rounded-e-full`} >{label}</button>
     )
 }
 

@@ -1,21 +1,27 @@
 import React from 'react'
 import { imgBaseURL } from '../app/constaint'
-import { shortenString } from '../helper'
+import { shortenString, intToFloat } from '../helper'
 import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
+import LazyLoadImageComponent from './LazyLoadImageComponent';
 
-function MovieCard({ poster_path, original_title, release_date, vote_average }) {
+function MovieCard({ media_type, id, poster_path, original_title, release_date, vote_average, handleClick }) {
     return (
-        <div className=' min-w-min py-2.5 px-2.5'>
-            <div className=' w-28 sm:w-40 relative'>
-                <img
-                    src={imgBaseURL + poster_path}
-                    alt=""
-                    className=' object-contain rounded-lg transition duration-200 ease-in hover:scale-110' />
+        <div className=' min-w-min py-2.5 px-2.5' onClick={() => { handleClick(id, media_type) }}>
+            <div className=' w-28 sm:w-40 aspect-[2/3] relative'>
+                <div className=' object-contain rounded-lg transition duration-200 ease-in hover:scale-110'>
+                    <LazyLoadImageComponent
+                        url={imgBaseURL + poster_path}
+                        alt=""
+                        className=' '
+
+                    />
+                </div>
+
                 <div className='w-10 absolute bottom-[-10px] left-2 bg-gray-200 opacity-80 rounded-full p-0.5 font-bold'>
                     <CircularProgressbar
                         value={vote_average / 10 * 100}
-                        text={`${vote_average}`}
+                        text={`${intToFloat(vote_average)}`}
                         styles={buildStyles({
                             textSize: '35px',
                             pathColor: `rgba(249, 115, 22, ${vote_average / 10 * 100})`,

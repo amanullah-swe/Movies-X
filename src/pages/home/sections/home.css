@@ -1,6 +1,6 @@
  .scroll-container {
     /* Add any desired dimensions and styles for your container */
-    overflow: auto; /* Hide both horizontal and vertical scrollbars */
+    overflow: scroll; /* Hide both horizontal and vertical scrollbars */
 
     /* Hide the scrollbar in Webkit (Chrome, Safari, etc.) */
     scrollbar-width: none; /* Firefox 64+ */
