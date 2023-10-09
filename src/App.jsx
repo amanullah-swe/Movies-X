@@ -7,8 +7,7 @@ import {
 import HomePage from "./pages/home/HomePage";
 import MoviePage from "./pages/movie/MoviePage";
 import Discover from "./pages/discover/Discover";
-import SearchResult from "./pages/SearchResult/SearchResult";
-
+import SearchResult from './pages/searchResult/SearchResult.jsx'
 
 const router = createBrowserRouter([
   {
