@@ -36,7 +36,7 @@ function SearchResult() {
     const handleClick = () => {
         const newInputValue = inputValue + `&page=${page}`;
         dispatch(fetchMoviesByNameAsync(newInputValue));
-        setPage(page + 1);
+        setPage(1);
     }
     const fetchMoreData = () => {
 

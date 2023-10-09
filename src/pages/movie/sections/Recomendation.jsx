@@ -9,7 +9,7 @@ function Recomendation({ recomendation, toogle }) {
         return navigate(`/${toogle}/${id}`)
     }
     return (
-        <section id='recomendation' className="flex flex-col">
+        <section id='recomendation' className="flex flex-col sm:h-96 h-80">
             <div className="flex flex-row justify-between items-center w-full mb-4">
                 <h3 className="text-2xl font-palanquin font-semibold max-sm:text-lg">Recomentions</h3>
             </div>
