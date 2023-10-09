@@ -1,11 +1,13 @@
 import React, { useCallback, useState } from 'react'
-import { movies } from '../../../app/constaint.js'
+import { fullSizeImgUrl, movies } from '../../../app/constaint.js'
 import { imgBaseURL } from '../../../app/constaint.js'
 import Button from '../../../components/Button.jsx'
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import 'react-lazy-load-image-component/src/effects/blur.css';
 import LazyLoadImageComponent from '../../../components/LazyLoadImageComponent.jsx';
 import { useNavigate } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import { selectTrendingMovies } from '../../../apis/home/homeSlcie.js';
 
 function Hero() {
     const [inputValue, setInputValue] = useState('');
@@ -24,13 +26,13 @@ function Hero() {
         setInputValue('');
     }
 
-    const movie = movies[Math.floor(Math.random() * 20)];
+    const movie = useSelector(selectTrendingMovies)[Math.floor(Math.random() * 20)];
 
     return (
         <section id='hero' className='relative   flex items-center justify-center'>
             <div>
                 <div className=' md:min-h-[600px] min-h-[300px]'>
-                    <LazyLoadImageComponent url={imgBaseURL + movie.backdrop_path} alt={''} />
+                    <LazyLoadImageComponent url={fullSizeImgUrl + movie?.backdrop_path} alt={''} />
                 </div>
                 <div className=' w-full px-8 md:px-48 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex items-center justify-center flex-col z-10 '>
                     <h2 className='font-bold text-5xl font-palanquin max-sm:text-2xl'>Welcome.</h2>

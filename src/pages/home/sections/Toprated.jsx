@@ -34,7 +34,7 @@ function Toprated() {
         return navigate(`/${newToogle}/${id}`)
     }
     return (
-        <section id='popular-movies'>
+        <section id='popular-movies' className='sm:h-96 h-80'>
             <div className="flex flex-row justify-between items-center w-full">
                 <h3 className="text-4xl font-palanquin font-semibold max-sm:text-lg">Top Rated </h3>
                 <div className=" self-end mb-2 sm:mb-6">

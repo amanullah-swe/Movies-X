@@ -4,27 +4,40 @@ import {
   Route,
   Link,
 } from "react-router-dom";
-import HomePage from "./pages/home/HomePage";
-import MoviePage from "./pages/movie/MoviePage";
-import Discover from "./pages/discover/Discover";
-import SearchResult from './pages/searchResult/SearchResult.jsx'
+// lazy Load
+import React, { Suspense, lazy } from "react";
+const HomePage = lazy(() => import("./pages/home/HomePage"));
+const MoviePage = lazy(() => import("./pages/movie/MoviePage"));
+const Discover = lazy(() => import("./pages/discover/Discover"));
+const SearchResult = lazy(() => import('./pages/searchResult/SearchResult.jsx'));
+
+
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <HomePage></HomePage>
+    element:
+      <Suspense fallback={<div>Loading...</div>}>
+        <HomePage></HomePage>
+      </Suspense>
   },
   {
     path: "/:toogle/:movieId",
-    element: <MoviePage></MoviePage>,
+    element: <Suspense fallback={<div>Loading...</div>}>
+      <MoviePage></MoviePage>
+    </Suspense>,
   },
   {
     path: "/discover/:toogle",
-    element: <Discover />,
+    element: <Suspense fallback={<div>Loading...</div>}>
+      <Discover />
+    </Suspense>,
   },
   {
     path: "/search-result/",
-    element: <SearchResult />,
+    element: <Suspense fallback={<div>Loading...</div>}>
+      <SearchResult />
+    </Suspense>,
   },
 ]);
 function App() {

@@ -5,7 +5,7 @@ import MovieGrid from "../../components/MovieGrid";
 import { movies } from "../../app/constaint";
 import Navbar from "../../components/Navbar";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchMoviesByNameAsync, selectMovies, selectSearchResultStatus } from "../../apis/searchResult/searchResultSlice";
+import { fetchMoreDataByNameAsync, fetchMoviesByNameAsync, selectMovies, selectSearchResultStatus } from "../../apis/searchResult/searchResultSlice";
 function SearchResult() {
     const location = useLocation();
     const searchValue = new URLSearchParams(location.search).get("searchValue");
@@ -14,10 +14,14 @@ function SearchResult() {
     const status = useSelector(selectSearchResultStatus);
     const dispatch = useDispatch();
     const [inputValue, setInputValue] = useState(searchValue);
+    const [page, setPage] = useState(1);
+
 
 
     useEffect(() => {
-        dispatch(fetchMoviesByNameAsync(inputValue));
+        const newInputValue = inputValue + `&page=${page}`;
+        dispatch(fetchMoviesByNameAsync(newInputValue));
+        setPage(page + 1);
     }, [])
 
     const navigate = useNavigate();
@@ -30,12 +34,16 @@ function SearchResult() {
     }
 
     const handleClick = () => {
-        console.log(inputValue);
-        setInputValue('');
-        dispatch(fetchMoviesByNameAsync(inputValue));
+        const newInputValue = inputValue + `&page=${page}`;
+        dispatch(fetchMoviesByNameAsync(newInputValue));
+        setPage(page + 1);
     }
     const fetchMoreData = () => {
-        console.log('hellow')
+
+        const newInputValue = inputValue + `&page=${page}`;
+        dispatch(fetchMoreDataByNameAsync(newInputValue));
+        setPage(page + 1);
+
     }
     return (
         <main className="text-white">

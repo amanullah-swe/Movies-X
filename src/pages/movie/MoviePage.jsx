@@ -5,7 +5,7 @@ import TopCast from './sections/TopCast'
 import SimilarMovies from './sections/SimilarMovies'
 import Recomendation from './sections/Recomendation'
 import OfficialVidoes from './sections/OfficialVidoes'
-import { imgBaseURL, } from '../../app/constaint'
+import { fullSizeImgUrl, imgBaseURL, } from '../../app/constaint'
 import LazyLoadImageComponent from '../../components/LazyLoadImageComponent'
 import { useParams } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
@@ -45,7 +45,7 @@ function MoviePage() {
                 <div>
                     <div className='w-full h-full'>
                         <LazyLoadImageComponent
-                            url={imgBaseURL + movieById.backdrop_path}
+                            url={fullSizeImgUrl + movieById.backdrop_path}
                             alt=""
                             className='w-full h-full' />
                     </div>

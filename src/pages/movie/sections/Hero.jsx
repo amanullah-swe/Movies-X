@@ -1,5 +1,5 @@
 import React from 'react'
-import { imgBaseURL } from '../../../app/constaint'
+import { fullSizeImgUrl, imgBaseURL } from '../../../app/constaint'
 import { CircularProgressbar, buildStyles } from 'react-circular-progressbar'
 import LazyLoadImageComponent from '../../../components/LazyLoadImageComponent'
 import { useParams } from 'react-router-dom'
@@ -14,7 +14,7 @@ function Hero({ movieById }) {
                 <div className='max-md:h-fit'>
                     <div className=' md:max-w-xs rounded-s-xl rounded-e-3xl shadow-2xl max-w-[180px] overflow-hidden p-0'>
                         <LazyLoadImageComponent
-                            url={imgBaseURL + movieById?.poster_path}
+                            url={fullSizeImgUrl + movieById?.poster_path}
                             alt=""
                         />
                     </div>

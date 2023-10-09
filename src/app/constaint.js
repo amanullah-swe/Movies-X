@@ -398,7 +398,8 @@ export const movies = [
     }
 ]
 
-export const imgBaseURL = "https://image.tmdb.org/t/p/original/"
+export const imgBaseURL = "https://image.tmdb.org/t/p/w300/"
+export const fullSizeImgUrl = "https://image.tmdb.org/t/p/original/";
 
 export const movieById = {
     "adult": false,

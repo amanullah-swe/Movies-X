@@ -11,7 +11,7 @@ function MovieCard({ media_type, id, poster_path, original_title, release_date, 
             <div className=' w-28 sm:w-40 aspect-[2/3] relative'>
                 <div className=' object-contain rounded-lg transition duration-200 ease-in hover:scale-110'>
                     <LazyLoadImageComponent
-                        url={imgBaseURL + poster_path}
+                        url={imgBaseURL + poster_path + "?quality=10"}
                         alt=""
                         className=' '
 

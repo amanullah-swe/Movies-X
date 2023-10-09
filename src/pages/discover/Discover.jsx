@@ -21,7 +21,6 @@ function Discover() {
     let queryGenres = 'genres= ';
 
     useEffect(() => {
-
         for (const genre of moviesGenres) {
             let id = genre.id;
             queryGenres = queryGenres + (id.toString() + ' , ');
