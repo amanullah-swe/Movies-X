@@ -7,7 +7,7 @@ import {
 import HomePage from "./pages/home/HomePage";
 import MoviePage from "./pages/movie/MoviePage";
 import Discover from "./pages/discover/Discover";
-import SearchResult from "./pages/searchResult/searchResult";
+import SearchResult from "./pages/SearchResult/SearchResult";
 
 
 const router = createBrowserRouter([
