@@ -7,19 +7,17 @@ import LazyLoadImageComponent from './LazyLoadImageComponent';
 
 // Lazy load the YouTube player
 function OfficialVideoCard({ videoKey, name, handleClick, open, id }) {
+    console.log(`https://i.ytimg.com/vi/${videoKey}/hqdefault.jpg`);
     const text = "12345677788";
     return (
         <div onClick={(e) => {
             handleClick(e, id)
         }}>
-            <div className='w-48 p-0 overflow-hidden rounded-xl '>
-                <div className='rounded-lg w-40 scale-150'>
-                    <LazyLoadImageComponent
-                        url={`https://i.ytimg.com/vi/${videoKey}/hqdefault.jpg`}
-                        alt="img"
-
-                    />
-                </div>
+            <div className='w-48 aspect-video p-0 overflow-hidden rounded-xl '>
+                <LazyLoadImageComponent
+                    url={`https://i.ytimg.com/vi/${videoKey}/hqdefault.jpg`}
+                    alt="img"
+                />
             </div>
             <div  >
                 {
@@ -36,7 +34,7 @@ function OfficialVideoCard({ videoKey, name, handleClick, open, id }) {
                     </div>
                 }
             </div>
-        </div>
+        </div >
     )
 }
 

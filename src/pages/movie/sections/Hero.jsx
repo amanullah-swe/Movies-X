@@ -40,7 +40,6 @@ function Hero({ movieById }) {
                                 })}
                             />
                         </div>
-                        <p>play botton</p>
                     </div>
                     <div className=' max-w-xl max-md:hidden mt-2'>
                         <h2 className='font-bold font-palanquin text-2xl leading-normal'>Overview</h2>

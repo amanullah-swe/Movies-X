@@ -23,6 +23,7 @@ function MoviePage() {
     const similarMovies = useSelector(selectSimilarMovies);
     const recomendation = useSelector(selectRecomendationMovies);
 
+    console.log(similarMovies);
     useEffect(() => {
         let genres = 'genres='
         if (movieById.genres) {
@@ -59,7 +60,7 @@ function MoviePage() {
             <section className='padding-x padding-t pb-4 relative top-0 left-0 z-10'  ><Hero movieById={movieById} /></section>
             <section className='padding-x relative top-0 left-0 z-10'><TopCast cast={cast} /></section>
             <section className='padding-x'><OfficialVidoes movieReltedVideos={movieReltedVideos} /></section>
-            <section className='padding-x mt-8'><SimilarMovies similarMovies={similarMovies} toogle={toogle} /></section>
+            {similarMovies.length > 0 ? <section className='padding-x mt-8'><SimilarMovies similarMovies={similarMovies} toogle={toogle} /></section> : <></>}
             <section className='padding-x mt-8'><Recomendation recomendation={recomendation} toogle={toogle} /></section>
         </main >
     )

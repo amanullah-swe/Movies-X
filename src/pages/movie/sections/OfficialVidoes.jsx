@@ -17,7 +17,8 @@ function OfficialVidoes({ movieReltedVideos }) {
             </div>
 
             <div className="scroll-container flex gap-5">
-                {movieReltedVideos.map((video) => (
+                {movieReltedVideos?.map((video) => (
+
                     <OfficialVideoCard key={video.id} id={video.id} videoKey={video.key} handleClick={handleClick} open={open} playIcon />
                 ))}
             </div>
