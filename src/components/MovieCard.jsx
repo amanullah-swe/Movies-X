@@ -1,47 +1,65 @@
-import React from 'react'
-import { imgBaseURL } from '../app/constaint'
-import { shortenString, intToFloat } from '../helper'
-import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
-import 'react-circular-progressbar/dist/styles.css';
-import LazyLoadImageComponent from './LazyLoadImageComponent';
+import React from "react";
+import { imgBaseURL } from "../app/constaint";
+import { shortenString, intToFloat } from "../helper";
+import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
+import "react-circular-progressbar/dist/styles.css";
+import LazyLoadImageComponent from "./LazyLoadImageComponent";
 
-function MovieCard({ media_type, id, poster_path, original_title, release_date, vote_average, handleClick }) {
-    return (
-        <div className=' min-w-min py-2.5 px-2.5' onClick={() => { handleClick(id, media_type) }}>
-            <div className=' w-28 sm:w-40 aspect-[2/3] relative'>
-                <div className=' object-contain rounded-lg transition duration-200 ease-in hover:scale-110'>
-                    <LazyLoadImageComponent
-                        url={imgBaseURL + poster_path + "?quality=10"}
-                        alt=""
-                        className=' '
-
-                    />
-                </div>
-
-                <div className='w-10 absolute bottom-[-10px] left-2 bg-gray-200 opacity-80 rounded-full p-0.5 font-bold'>
-                    <CircularProgressbar
-                        value={vote_average / 10 * 100}
-                        text={`${intToFloat(vote_average)}`}
-                        styles={buildStyles({
-                            textSize: '35px',
-                            pathColor: `rgba(249, 115, 22, ${vote_average / 10 * 100})`,
-                            textColor: 'black',
-                            trailColor: 'white',
-                            backgroundColor: 'black',
-                            strokeLinecap: 'round',
-                        })}
-                    />
-                </div>
-            </div>
-            <div>
-                <h4 className='mt-4 font-palanquin font-bold font-xl'>{shortenString(original_title)}</h4>
-                <p className='mt-1 opacity-70 text-gray-200 font-montserrat text-xs'>{release_date}</p>
-            </div>
+function MovieCard({
+  media_type,
+  id,
+  poster_path,
+  original_title,
+  release_date,
+  vote_average,
+  handleClick,
+}) {
+  return (
+    <div
+      className=" min-w-min py-2.5 px-2.5"
+      onClick={() => {
+        handleClick(id, media_type);
+      }}
+    >
+      <div className=" w-28 sm:w-40 aspect-[2/3] relative">
+        <div className=" object-contain rounded-lg transition duration-200 ease-in hover:scale-110">
+          <LazyLoadImageComponent
+            url={imgBaseURL + poster_path + "?quality=10"}
+            alt=""
+            className=" "
+          />
         </div>
-    )
+
+        <div className="w-10 absolute bottom-[-10px] left-2 bg-gray-200 opacity-80 rounded-full p-0.5 font-bold">
+          <CircularProgressbar
+            value={Math.ceil((vote_average / 10) * 100)}
+            text={`${intToFloat(Math.ceil(vote_average))}`}
+            styles={buildStyles({
+              textSize: "35px",
+              pathColor: `rgba(249, 115, 22, ${Math.ceil(
+                (vote_average / 10) * 100
+              )})`,
+              textColor: "black",
+              trailColor: "white",
+              backgroundColor: "black",
+              strokeLinecap: "round",
+            })}
+          />
+        </div>
+      </div>
+      <div>
+        <h4 className="mt-4 font-palanquin font-bold font-xl">
+          {shortenString(original_title)}
+        </h4>
+        <p className="mt-1 opacity-70 text-gray-200 font-montserrat text-xs">
+          {release_date}
+        </p>
+      </div>
+    </div>
+  );
 }
 
-export default MovieCard
+export default MovieCard;
 
 // {
 //     "adult": false,

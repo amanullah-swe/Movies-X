@@ -1,97 +1,107 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Palanquin:wght@100;200;300;400;500;600;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Palanquin:wght@100;200;300;400;500;600;700&display=swap");
 
-
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-
- *{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    scroll-behavior: smooth;
- }
-body{
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+body {
   background-color: black;
 }
-  @layer components {
-    .max-container {
-      max-width: 1440px;
-      margin: 0 auto;
-    }
+@layer components {
+  .max-container {
+    max-width: 1440px;
+    margin: 0 auto;
   }
-  
-  @layer utilities {
-    .padding {
-      @apply sm:px-16 px-8 sm:py-24 py-12;
-    }
-  
-    .padding-x {
-      @apply sm:px-16 px-8;
-    }
-  
-    .padding-y {
-      @apply sm:py-20 py-10;
-    }
-  
-    .padding-l {
-      @apply sm:pl-16 pl-8;
-    }
-  
-    .padding-r {
-      @apply sm:pr-16 pr-8;
-    }
-  
-    .padding-t {
-      @apply sm:pt-24 pt-12;
-    }
-  
-    .padding-b {
-      @apply sm:pb-24 pb-12;
-    }
-  
-    .info-text {
-      @apply font-montserrat text-gray-300 text-lg leading-7;
-    }
-  }
-  .vignette-bottom {
-    background: linear-gradient(
-      to top,
-      rgba(0, 0, 0, 1) 1%,
-      rgba(0, 0, 0, 0.03) 50%,
-      rgba(0, 0, 0, 0.1) 100%
-    );
-  }
-  .vignette-left{
-    background: linear-gradient(
-      to right,
-      rgba(0, 0, 0, 1) 1%,
-      rgba(0, 0, 0, 0.03) 40%,
-      rgba(0, 0, 0, 0.1) 100%
-    );
-  }
-  .vignette-right{
-    background: linear-gradient(
-      to left,
-      rgba(0, 0, 0, 1) 1%,
-      rgba(0, 0, 0, 0.03) 40%,
-      rgba(0, 0, 0, 0.1) 100%
-    );
+}
+
+@layer utilities {
+  .padding {
+    @apply sm:px-16 px-8 sm:py-24 py-12;
   }
 
-  .scroll-container {
-    /* Add any desired dimensions and styles for your container */
-    overflow: scroll; /* Hide both horizontal and vertical scrollbars */
-
-    /* Hide the scrollbar in Webkit (Chrome, Safari, etc.) */
-    scrollbar-width: none; /* Firefox 64+ */
-    -ms-overflow-style: none; /* Internet Explorer/Edge */
+  .padding-x {
+    @apply sm:px-16 px-8;
   }
 
-  .scroll-container::-webkit-scrollbar {
-    width: 0; /* Width of scrollbar */
-    height: 0; /* Height of scrollbar */
+  .padding-y {
+    @apply sm:py-20 py-10;
   }
+
+  .padding-l {
+    @apply sm:pl-16 pl-8;
+  }
+
+  .padding-r {
+    @apply sm:pr-16 pr-8;
+  }
+
+  .padding-t {
+    @apply sm:pt-24 pt-12;
+  }
+
+  .padding-b {
+    @apply sm:pb-24 pb-12;
+  }
+
+  .info-text {
+    @apply font-montserrat text-gray-300 text-lg leading-7;
+  }
+}
+.vignette-bottom {
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 1) 1%,
+    rgba(0, 0, 0, 0.03) 50%,
+    rgba(0, 0, 0, 0.1) 100%
+  );
+}
+.vignette-left {
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 1) 1%,
+    rgba(0, 0, 0, 0.03) 40%,
+    rgba(0, 0, 0, 0.1) 100%
+  );
+}
+.vignette-right {
+  background: linear-gradient(
+    to left,
+    rgba(0, 0, 0, 1) 1%,
+    rgba(0, 0, 0, 0.03) 40%,
+    rgba(0, 0, 0, 0.1) 100%
+  );
+}
+
+.scroll-container {
+  /* Add any desired dimensions and styles for your container */
+  overflow: scroll; /* Hide both horizontal and vertical scrollbars */
+
+  /* Hide the scrollbar in Webkit (Chrome, Safari, etc.) */
+  scrollbar-width: none; /* Firefox 64+ */
+  -ms-overflow-style: none; /* Internet Explorer/Edge */
+}
+
+.scroll-container::-webkit-scrollbar {
+  width: 0; /* Width of scrollbar */
+  height: 0; /* Height of scrollbar */
+}
+
+#loader {
+  width: 100%;
+  height: 100vh;
+  svg {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 150px;
+    width: 150px;
+  }
+}
