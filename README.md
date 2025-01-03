@@ -7,34 +7,38 @@ Movies-X is a web application that allows users to explore and search for movies
 ## Features
 
 ### 1. **Movies Home Page**
-   - A dynamic homepage displaying a collection of trending or popular movies. 
-   - Infinite scrolling for seamless browsing through a large collection of movies.
 
-   ![Movies Home Page](./images/movies-homepage.png)
+- A dynamic homepage displaying a collection of trending or popular movies.
+- Infinite scrolling for seamless browsing through a large collection of movies.
+
+![Movies Home Page](./images/movies-homepage.png)
 
 ---
 
 ### 2. **Search Movies**
-   - A search bar to quickly find movies by their title or keywords.
-   - Results are displayed instantly with relevant matches.
 
-   ![Search Movies](./images/search-movies.png)
+- A search bar to quickly find movies by their title or keywords.
+- Results are displayed instantly with relevant matches.
+
+![Search Movies](./images/search-movies.png)
 
 ---
 
 ### 3. **Individual Movie Information**
-   - A dedicated page for each movie displaying detailed information such as title, release date, synopsis, genre, and ratings.
-   - High-quality posters and trailers (if available).
 
-   ![Movie Information Page](./images/movie-info.png)
+- A dedicated page for each movie displaying detailed information such as title, release date, synopsis, genre, and ratings.
+- High-quality posters and trailers (if available).
+
+![Movie Information Page](./images/movie-info.png)
 
 ---
 
-### 4. **Infinite Scroll Implementation**
-   - Smooth infinite scrolling to load more movies as the user reaches the end of the page.
-   - Optimized for performance to ensure a seamless browsing experience.
+### 4. **Movies Suggetion**
 
-   ![Infinite Scroll](./images/infinite-scroll.png)
+- Smooth infinite scrolling to load more movies as the user reaches the end of the page.
+- Optimized for performance to ensure a seamless browsing experience.
+
+![Movies suggestion](./images/moviessuggestion.png)
 
 ---
 
@@ -52,26 +56,31 @@ Movies-X is a web application that allows users to explore and search for movies
 ## How to Run Locally
 
 1. Clone the repository:
+
    ```bash
    git clone https://github.com/your-username/movies-x.git
    ```
 
 2. Navigate to the project directory:
+
    ```bash
    cd movies-x
    ```
 
 3. Install dependencies:
+
    ```bash
    npm install
    ```
 
 4. Add your TMDb API key to the environment variables:
+
    ```env
    REACT_APP_TMDB_API_KEY=your_api_key_here
    ```
 
 5. Start the development server:
+
    ```bash
    npm run dev
    ```
